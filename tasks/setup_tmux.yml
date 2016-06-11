@@ -1,0 +1,15 @@
+---
+- name: dotfiles - setup_tmux | Install tmux dotfiles
+  git:
+    repo: "{{ dotfiles_tmux_repo }}"
+    dest: "{{ dotfiles_tmux_dir }}"
+    update: yes
+    accept_hostkey: yes
+  become: no
+
+- name: dotfiles - setup_tmux | Copy .tmux.conf
+  file:
+    src: "{{ dotfiles_tmux_dir }}/.tmux.conf"
+    dest: "~/.tmux.conf"
+  become: no
+

@@ -1,0 +1,16 @@
+---
+- name: dotfiles | Update apt-get cache
+  apt: 
+    update_cache: yes
+  when: false
+
+- name: dotfiles | Install base packages
+  apt: 
+    pkg: "{{ item }}"
+    state: present
+  with_items: "{{ dotfiles_base_packages }}"
+  when: false
+
+- include: setup_vim.yml
+- include: setup_zsh.yml
+- include: setup_tmux.yml
