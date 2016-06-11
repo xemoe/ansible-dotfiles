@@ -8,7 +8,7 @@
   become: no
 
 - name: dotfiles - setup_tmux | Copy .tmux.conf
-  file:
+  copy:
     src: "{{ dotfiles_tmux_dir }}/.tmux.conf"
     dest: "~/.tmux.conf"
   become: no
