@@ -9,6 +9,7 @@
 
 - name: dotfiles - setup_tmux | Copy .tmux.conf
   copy:
+    remote_src: True 
     src: "{{ dotfiles_tmux_dir }}/.tmux.conf"
     dest: "~/.tmux.conf"
   become: no
