@@ -1,0 +1,7 @@
+---
+- name: testing::dotfiles
+  hosts: mainbox
+  become: yes
+  roles:
+    - role: xemoe.dotfiles
+
